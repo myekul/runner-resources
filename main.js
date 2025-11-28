@@ -1,4 +1,4 @@
-setTitle('RUNNER RESOURCES')
+// setTitle('RUNNER RESOURCES')
 setFooter('2025')
 initializeHash('home')
 setAudio('cuphead')

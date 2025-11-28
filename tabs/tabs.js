@@ -6,7 +6,9 @@ async function generateHome() {
         elem.style.gap = '10px'
     })
     setResources()
-    document.getElementById('resourcesTitle').innerHTML = fontAwesomeText('graduation-cap', 'Getting Started')
+    document.getElementById('runRecap').style.gap = '0px'
+    document.getElementById('resourcesTitle1').innerHTML = fontAwesomeText('graduation-cap', 'Getting Started')
+    document.getElementById('resourcesTitle2').innerHTML = fontAwesomeText('plus', 'More Resources')
 }
 function generateTutorials() {
     let HTMLContent = ''

@@ -7,7 +7,7 @@ header {
 }
 
 .textBlock {
-    max-width: 520px;
+    max-width: 440px;
 }
 
 #home a {
@@ -25,10 +25,6 @@ header {
     width: 230px !important;
     height: 50px !important;
     margin: 0 auto
-}
-
-#resources>div>div>p {
-    max-width: 350px;
 }
 
 .toolButton {
