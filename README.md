@@ -1,4 +1,6 @@
 # To do
  - Baroness / King Dice HP
- - Weapon damage
+ - Expanded weapon damage
  - Phantom Expert HP is bugged
+
+ - Mugshot download

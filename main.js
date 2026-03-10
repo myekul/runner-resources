@@ -17,15 +17,7 @@ function action() {
         show('pageTitle')
         setPageTitle(fontAwesomeSet[globalTab][1], fontAwesomeSet[globalTab][0])
         if (globalTab == 'shotInfo') {
-            const pageTitle = document.getElementById('pageTitle')
-            let HTMLContent = ''
-            HTMLContent += `
-                <div class='container' style='position:absolute;top:22px;right:100px;gap:8px'>
-                <div>verified by</div>
-                <img src='https://www.speedrun.com/static/user/98r5vwqx/image?v=7a51b38' style='height:32px;border-radius:50%'>
-                <div style='color:#B8B8B8'>SBDWolf</div>
-                </div>`
-            pageTitle.innerHTML += HTMLContent
+            tabCredit('SBDWolf', 'verified by', '98r5vwqx/image?v=7a51b38', 'color:#B8B8B8')
         }
     }
     if (['bossInfo', 'hp'].includes(globalTab)) {
