@@ -38,7 +38,7 @@ function setButtons() {
         HTMLContent += `<img src='images/graveyardTool/${colIndex}.png' class='container' style='height:${colIndex == 1 ? 90 : 70}px;${colIndex == 1 ? '' : 'padding-top:50px'}'>`
         col.forEach((word, wordIndex) => {
             const id = colIndex + '-' + wordIndex
-            HTMLContent += `<div id='${id}' class='button graveyard' onclick="buttonClick('${id}','col${colIndex}','graveyardColor');setIndex(${colIndex},${word.n})">${word.w}</div>`
+            HTMLContent += `<button id='${id}' class='button graveyard' onclick="buttonClick('${id}','col${colIndex}','graveyardColor');setIndex(${colIndex},${word.n})">${word.w}</button>`
         })
         HTMLContent += `</div>`
     })

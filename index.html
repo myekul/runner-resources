@@ -27,15 +27,15 @@
         <main>
             <div class="sticky">
                 <div id="headerRow" class="container">
-                    <div class="button toolButton monkeyColor" style="gap:8px" onclick="showTab('monkeyTool')">
+                    <button class="button toolButton monkeyColor" style="gap:8px" onclick="showTab('monkeyTool')">
                         <img src="images/monkeyTool/monkey.png" style="height:25px">
-                    </div>
-                    <div class="button toolButton graveyardColor" style="gap:4px" onclick="showTab('graveyardTool')">
+                    </button>
+                    <button class="button toolButton graveyardColor" style="gap:4px" onclick="showTab('graveyardTool')">
                         <img src="images/graveyardTool/podium.png" style="height:42px">
-                    </div>
-                    <div class="button toolButton rumorhoneybottoms" style="gap:4px" onclick="showTab('rumorTool')">
+                    </button>
+                    <button class="button toolButton rumorhoneybottoms" style="gap:4px" onclick="showTab('rumorTool')">
                         <img src="images/rumorTool/icon.png" style="height:22px">
-                    </div>
+                    </button>
                 </div>
                 <div id="progress"></div>
                 <div id="tabsDiv"></div>
@@ -44,10 +44,9 @@
             <div id="bossSelect"></div>
             <div id='boardTitleDiv' class="sticky container" style="top:85px">
                 <div id="boardTitle" class="container background1" style="max-width: 50%;margin:0"></div>
-                <div id='closeBoardTitle' class='grow' style='display:none;margin-left:10px'
-                    onclick="globalBossIndex=-1;updateBoardTitle();action();playSound('move')"><i
-                        class="fa fa-close"></i>
-                </div>
+                <button id='closeBoardTitle' class='grow' style='display:none;margin-left:10px' onclick="globalBossIndex=-1;updateBoardTitle();action();playSound('move')">
+                    <i class="fa fa-close"></i>
+                </button>
             </div>
             <div id="content"></div>
             </iframe>

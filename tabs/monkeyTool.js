@@ -44,7 +44,7 @@ function createTable(code) {
 }
 async function generateMonkeyTool() {
     await setHTML('html/monkey.html', 'content')
-    const buttons = document.querySelectorAll('#buttons > div > div')
+    const buttons = document.querySelectorAll('#buttons button')
     buttons.forEach(button => {
         button.addEventListener('click', function () {
             buttons.forEach(b => b.classList.remove('monkeyColor'))

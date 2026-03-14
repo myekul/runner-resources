@@ -1,6 +1,6 @@
 <div id="tool">
     <div class="container" style="justify-content:center;margin-bottom:10px">
-        <span class="button infoButton monkeyColor" onclick="openInfo()">INFO</span>
+        <button class="button infoButton monkeyColor" onclick="openInfo()">INFO</button>
     </div>
     <div class="container" style="gap:30px">
         <div id="tableDiv"></div>
@@ -8,38 +8,36 @@
             <div class="container"><img src="images/monkeyTool/mdhr.png" style="height:60px;padding-bottom:5px"></div>
             <div id="buttons">
                 <div class="container">
-                    <div class="button" onclick="createTable(16)">1-6</div>
-                    <div class="button" onclick="createTable(17)">1-7</div>
+                    <button class="button" onclick="createTable(16)">1-6</button>
+                    <button class="button" onclick="createTable(17)">1-7</button>
                 </div>
                 <div class="container">
-                    <div class="button" onclick="createTable(25)">2-5</div>
-                    <div class="button" onclick="createTable(210)">2-10</div>
+                    <button class="button" onclick="createTable(25)">2-5</button>
+                    <button class="button" onclick="createTable(210)">2-10</button>
                 </div>
                 <div class="container">
-                    <div class="button" onclick="createTable(39)">3-9</div>
-                    <div class="button" onclick="createTable(312)">3-12</div>
+                    <button class="button" onclick="createTable(39)">3-9</button>
+                    <button class="button" onclick="createTable(312)">3-12</button>
                 </div>
                 <div class="container">
-                    <div class="button" onclick="createTable(49)">4-9</div>
+                    <button class="button" onclick="createTable(49)">4-9</button>
                 </div>
                 <div class="container">
-                    <div class="button" onclick="createTable(512)">5-12</div>
+                    <button class="button" onclick="createTable(512)">5-12</button>
                 </div>
                 <div class="container">
-                    <div class="button" onclick="createTable(69)">6-9</div>
-                    <div class="button" onclick="createTable(611)">6-11</div>
+                    <button class="button" onclick="createTable(69)">6-9</button>
+                    <button class="button" onclick="createTable(611)">6-11</button>
                 </div>
                 <div class="container">
-                    <div class="button" onclick="createTable(79)">7-9</div>
+                    <button class="button" onclick="createTable(79)">7-9</button>
                 </div>
                 <div class="container">
-                    <div class="button" onclick="createTable(811)">8-11</div>
+                    <button class="button" onclick="createTable(811)">8-11</button>
                 </div>
             </div>
             <div class="container" style="justify-content:center;">
-                <div class="button monkeyColor" style="font-size:100%;width:100px"
-                    onclick="createTable();playSound('carddown')">
-                    Reset</div>
+                <button class="button monkeyColor" style="font-size:100%;width:100px" onclick="createTable();playSound('carddown')">Reset</button>
             </div>
         </div>
     </div>

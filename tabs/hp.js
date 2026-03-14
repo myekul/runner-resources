@@ -12,7 +12,7 @@ function parseHP(boss) {
         HTMLContent += `<div class='container' style='margin:15px 0'>`;
         difficulties.forEach((difficulty, index) => {
             if (!(index == 0 && !bossHP[0].hp[0])) {
-                HTMLContent += `<div class='button ${index == globalDifficulty ? 'selected' : difficulty.toLowerCase()}' style='width:80px' onclick="globalDifficulty=${index};playSound('move');action()">${difficulty}</div>`
+                HTMLContent += `<button class='button ${index == globalDifficulty ? 'selected' : difficulty.toLowerCase()}' style='width:80px' onclick="globalDifficulty=${index};playSound('move');action()">${difficulty}</button>`
             } else if (globalDifficulty == 0) {
                 globalDifficulty = 1
             }
