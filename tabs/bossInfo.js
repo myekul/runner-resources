@@ -29,9 +29,10 @@ function generateBossInfo() {
     const boss = bossArray[globalBossIndex]
     HTMLContent = ''
     if (boss) {
-        HTMLContent = `<div class='container' style='align-items:flex-start'>`
-        HTMLContent += parseOddities(boss)
-        HTMLContent += `</div>`
+        HTMLContent = `
+        <div class='container' style='align-items:flex-start'>
+            ${parseOddities(boss)}
+        </div>`
     } else {
         HTMLContent += `<div class='container'>Click a boss!</div>`
     }
@@ -44,24 +45,24 @@ function parseOddities(boss) {
     let HTMLContent = `<div>`
     if (bossOddities) {
         HTMLContent += `
-                <div>
-                    <div>${fontAwesomeText('book', 'Oddities')}</div>
-                    ${bossInfoSection(bossOddities)}
-                </div>`
+        <div>
+            <div>${fontAwesomeText('book', 'Oddities')}</div>
+            ${bossInfoSection(bossOddities)}
+        </div>`
     }
     if (bossTricks) {
         HTMLContent += `
-                <div>
-                    <div>${fontAwesomeText('gamepad', 'Tricks')}</div>
-                    ${bossInfoSection(bossTricks)}
-                </div>`
+        <div>
+            <div>${fontAwesomeText('gamepad', 'Tricks')}</div>
+            ${bossInfoSection(bossTricks)}
+        </div>`
     }
     if (bossAdvancedTricks) {
         HTMLContent += `
-                <div>
-                    <div>${fontAwesomeText('graduation-cap', 'Advanced Tricks')}</div>
-                    ${bossInfoSection(bossAdvancedTricks)}
-                </div>`
+        <div>
+            <div>${fontAwesomeText('graduation-cap', 'Advanced Tricks')}</div>
+            ${bossInfoSection(bossAdvancedTricks)}
+        </div>`
     }
     HTMLContent += `</div>`
     return HTMLContent
@@ -81,10 +82,10 @@ function parseOddities(boss) {
 }
 function bossPhaseHeader(boss, phaseID, phaseName) {
     return `
-        <div class='container ${boss.id}' style='gap:8px;padding:1px'>
-            <div class='container' style='width:38px;margin:0'>${getImage(boss, 38, phaseID)}</div>
-            ${phaseName}
-        </div>`
+    <div class='container ${boss.id}' style='gap:8px;padding:1px'>
+        <div class='container' style='width:38px;margin:0'>${getImage(boss, 38, phaseID)}</div>
+        ${phaseName}
+    </div>`
 }
 function phase(phaseText, phase, extra) {
     const boss = bossArray[globalBossIndex]
@@ -101,17 +102,17 @@ function phase(phaseText, phase, extra) {
     }
     let HTMLContent = ''
     if (boss) {
-        HTMLContent += `<div>`
         HTMLContent += `
-        <div class='container'>
-        <table class='border'>
-            <tr>
-                <td class='container ${boss.id}' style='gap:8px;padding:0 4px'>
-                    ${bossPhaseHeader(boss, phase, phaseText)}
-                </td>
-            </tr>
-        </table>
-        </div>`
+        <div>
+            <div class='container'>
+                <table class='border'>
+                    <tr>
+                        <td class='container ${boss.id}' style='gap:8px;padding:0 4px'>
+                            ${bossPhaseHeader(boss, phase, phaseText)}
+                        </td>
+                    </tr>
+                </table>
+            </div>`
         if (extra) {
             HTMLContent += `<div class='container' style='gap:5px;padding-top:3px'>`
             extra.forEach(elem => {

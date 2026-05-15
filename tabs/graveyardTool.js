@@ -34,8 +34,9 @@ const words = [
 function setButtons() {
     let HTMLContent = ''
     words.forEach((col, colIndex) => {
-        HTMLContent += `<div id='col${colIndex}'>`
-        HTMLContent += `<img src='images/graveyardTool/${colIndex}.png' class='container' style='height:${colIndex == 1 ? 90 : 70}px;${colIndex == 1 ? '' : 'padding-top:50px'}'>`
+        HTMLContent += `
+        <div id='col${colIndex}'>
+        <img src='images/graveyardTool/${colIndex}.png' class='container' style='height:${colIndex == 1 ? 90 : 70}px;${colIndex == 1 ? '' : 'padding-top:50px'}'>`
         col.forEach((word, wordIndex) => {
             const id = colIndex + '-' + wordIndex
             HTMLContent += `<button id='${id}' class='button graveyard' onclick="buttonClick('${id}','col${colIndex}','graveyardColor');setIndex(${colIndex},${word.n})">${word.w}</button>`
@@ -82,9 +83,9 @@ function createGraveyard() {
 }
 function generateGraveyardTool() {
     document.getElementById('content').innerHTML = `
-            <div class='container'><div class='button font2 graveyardColor' style='font-size:100%;width:60px' onclick="openInfo()">INFO</div></div>
-            <div id="tableDiv" class="container" style="padding-top:20px"></div>
-            <div id="buttons" class="container" style="gap:30px"></div>`
+    <div class='container'><div class='button font2 graveyardColor' style='font-size:100%;width:60px' onclick="openInfo()">INFO</div></div>
+    <div id="tableDiv" class="container" style="padding-top:20px"></div>
+    <div id="buttons" class="container" style="gap:30px"></div>`
     setButtons()
     createGraveyard()
 }

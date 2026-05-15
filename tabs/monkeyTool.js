@@ -47,8 +47,8 @@ async function generateMonkeyTool() {
     const buttons = document.querySelectorAll('#buttons button')
     buttons.forEach(button => {
         button.addEventListener('click', function () {
-            buttons.forEach(b => b.classList.remove('monkeyColor'))
-            this.classList.add('monkeyColor')
+            buttons.forEach(b => b.classList.remove('mrchimes'))
+            this.classList.add('mrchimes')
             playSound('move')
         })
     })

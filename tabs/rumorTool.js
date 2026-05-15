@@ -13,13 +13,14 @@ function generateRumorTool() {
                 HTMLContent += `<div class='container' style='position:relative;gap:80px;padding-bottom:15px;width:500px'>`
                 if (chunkIndex == 0 && index == chunk.length - 1) {
                     HTMLContent += `
-            <img src='images/rumorTool/rumor.png' style='position:absolute;right:-16px;top:-260px;height:250px;opacity:0.2;z-index:-1'>
-            <img src='images/rumorTool/middle.png' style='position:absolute;right:197px;top:-315px;height:335px;opacity:0.2;z-index:-1'>
-            <img src='images/rumorTool/bulletRight.png' style='position:absolute;right:140px;top:-200px;height:40px;opacity:0.5;z-index:-1'>`
+                    <img src='images/rumorTool/rumor.png' style='position:absolute;right:-16px;top:-260px;height:250px;opacity:0.2;z-index:-1'>
+                    <img src='images/rumorTool/middle.png' style='position:absolute;right:197px;top:-315px;height:335px;opacity:0.2;z-index:-1'>
+                    <img src='images/rumorTool/bulletRight.png' style='position:absolute;right:140px;top:-200px;height:40px;opacity:0.5;z-index:-1'>`
                 }
                 if (index == 0) {
-                    HTMLContent += `<div class='bracket' style='right:-70px'><div class='side'></div></div>`
-                    HTMLContent += `<div style='position:absolute;right:-160px;color:gray'>Chunk ${chunkIndex + 1}</div>`
+                    HTMLContent += `
+                    <div class='bracket' style='right:-70px'><div class='side'></div></div>
+                    <div style='position:absolute;right:-160px;color:gray'>Chunk ${chunkIndex + 1}</div>`
                     if (chunkIndex > 1) HTMLContent += `<div class='button rumorhoneybottoms' style='position:absolute;right:-120px;top:80px;height:30px;width:30px;border-radius:50%;font-size:120%' onclick="rumorToolRemove(${chunkIndex})">${fontAwesome('trash')}</div>`
                     if (chunkIndex > 1) HTMLContent += `<div class='button rumorhoneybottoms' style='position:absolute;right:-120px;top:150px;height:30px;width:30px;border-radius:50%;font-size:110%' onclick="rumorToolDuplicate(${chunkIndex})">${fontAwesome('clone')}</div>`
                 }

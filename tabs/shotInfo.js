@@ -23,16 +23,15 @@ function generateShotInfo() {
         })
         HTMLContent += `</div></div>
         <div class='container dim' style='font-size:80%;margin-top:20px;width:650px'>
-        *Crackshot EX:
-        <br>-The 5th and 6th turret shots are fired simulataneously as 2 overlapping bullets.
-        <br>-Parrying the turret will launch it to a target for 14 damage.
-        <br>-If an enemy collides with the turret, it will deal 12 damage.
-        <br>-Letting the turret fire 4 times and then parrying it will result in a grand total of 28 damage.
+            *Crackshot EX:
+            <br>-The 5th and 6th turret shots are fired simulataneously as 2 overlapping bullets.
+            <br>-Parrying the turret will launch it to a target for 14 damage.
+            <br>-If an enemy collides with the turret, it will deal 12 damage.
+            <br>-Letting the turret fire 4 times and then parrying it will result in a grand total of 28 damage.
         </div>`
     }
     function shotDetails(shot, index) {
-        let HTMLContent = ''
-        HTMLContent += `
+        return `
         <div class='container ${getRowColor(index + 1)}' style='padding:10px;width:900px;margin:0 auto'>
             <div style='width:80px'>
                 <div style='font-size:110%;margin-right:10px'>${shot.dps}</div>
@@ -79,7 +78,6 @@ function generateShotInfo() {
                 <div class='dim' style='font-size:80%'>EX</div>
             </div>
         </div>`
-        return HTMLContent
     }
     document.getElementById('content').innerHTML = HTMLContent
 }
