@@ -1,9 +1,9 @@
 <div id='home' class="container" style="gap:50px;margin-top:70px">
-    <div class="resources" style="margin:0">
+    <div class="resources homeWing homeWingLeft" style="margin:0">
         <div>
             <div id="resourcesTitle1"></div>
             <div>
-                <a href="https://obsproject.com/" target="_blank" class="smallResource">
+                <a href="https://obsproject.com/" target="_blank" class="smallResource" style="background-color: royalblue;color:white">
                     <img src="https://obsproject.com/assets/images/new_icon_small.png">
                     <div>OBS</div>
                 </a>
@@ -13,51 +13,52 @@
                 </p>
             </div>
             <div>
-                <a href='https://livesplit.org/' target="_blank" class="smallResource">
+                <a href='https://livesplit.org/' target="_blank" class="smallResource" style="background-color: var(--background1);color:white">
                     <img src="https://livesplit.org/images/icon.svg">
                     <div>LiveSplit</div>
                 </a>
                 <p>
                     The golden standard <span class='myekulColor'>speedrun timer</span>.
-                    <br><br>Once installed, you can navigate to split settings and change the game to Cuphead to enable
-                    the <span class="myekulColor">load remover</span>.
-                    You can also configure the <span class="myekulColor">autosplitter</span> to automatically
-                    split upon defeating a boss.
+                    LiveSplit has built-in support for Cuphead, with automatic splitting and load removal.
                 </p>
             </div>
         </div>
     </div>
-    <div>
-        <div class="border background1" style="padding:15px">
-            <img src="https://myekul.com/shared-assets/images/myekul.png" class='container' style="height:54px">
-            <div class="textBlock">
-                Hello! My name is <span class="myekulColor">myekul</span>
-                and I am a Cuphead speedrunner and web developer.
-                This is my <span class="myekulColor">Runner Resources</span> project,
-                a collection of resources to assist Cuphead speedrunners of all skill levels. Enjoy!
+    <div class="homeCabinet" style='position:relative'>
+        <div style="background-color:#A89171">
+            <div style="padding:15px;">
+                <img src="https://myekul.com/shared-assets/images/myekul.png" class='container' style="height:54px">
+                <div class="textBlock">
+                    Hello! My name is <span class="myekulColor">myekul</span>
+                    and I am a Cuphead speedrunner and web developer.
+                    This is my <span class="myekulColor">Runner Resources</span> project,
+                    a collection of resources to assist Cuphead speedrunners of all skill levels. Enjoy!
+                </div>
             </div>
-        </div>
-        <div class="container" style="gap:10px;margin-top:40px">
-            <div style="width:50px"><img src="https://upload.wikimedia.org/wikipedia/commons/0/0b/English_language.svg" style="height:24px"></div>
-            <div>
-                <a href="https://discord.com/invite/2BcMwEd" target="_blank" class='resourceButton shadow' style="background-color: royalblue;color:white">
-                    <img src="https://cdn.discordapp.com/icons/363446902861332481/356d153ea6a5867182e25294a4bb7980.png?size=160&quality=lossless" style="border-radius:20%">
-                    <div>Cuphead Speedrunning<br>Discord Server!</div>
+            <div class="cupboardShelf" aria-hidden="true"></div>
+            <div class="container" style="gap:10px;margin-top:40px">
+                <div style="width:50px"><img src="https://upload.wikimedia.org/wikipedia/commons/0/0b/English_language.svg" style="height:24px"></div>
+                <div>
+                    <a href="https://discord.com/invite/2BcMwEd" target="_blank" class='resourceButton shadow' style="background-color: royalblue;color:white">
+                        <img src="https://cdn.discordapp.com/icons/363446902861332481/356d153ea6a5867182e25294a4bb7980.png?size=160&quality=lossless" style="border-radius:20%">
+                        <div>Cuphead Speedrunning<br>Discord Server!</div>
+                    </a>
+                </div>
+            </div>
+            <p class='resourceText' style="margin:0 auto">Join us!
+                Chat with top-level runners and exchange strategies in the largest
+                Cuphead speedrunning community on the web.</p>
+            <div class="container" style="gap:10px;margin-top:10px">
+                <div style="width:50px"><img src="https://www.speedrun.com/images/flags/br.png" style="height:24px"></div>
+                <a href="https://discord.gg/bDaTPXp8TW" target="_blank" class="resourceButton smallResource shadow" style="background-color: #238b23;color:gold;width:300px !important;margin:0">
+                    <img src="images/brazil.webp" style="border-radius:20%">
+                    <div>Servidor Brasileiro!</div>
                 </a>
             </div>
         </div>
-        <p class='resourceText' style="margin:0 auto">Join us!
-            Chat with top-level runners and exchange strategies in the largest
-            Cuphead speedrunning community on the web.</p>
-        <div class="container" style="gap:10px;margin-top:10px">
-            <div style="width:50px"><img src="https://www.speedrun.com/images/flags/br.png" style="height:24px"></div>
-            <a href="https://discord.gg/bDaTPXp8TW" target="_blank" class="resourceButton smallResource shadow" style="background-color: #238b23;color:gold;width:300px !important;margin:0">
-                <img src="images/brazil.webp" style="border-radius:20%">
-                <div>Servidor Brasileiro!</div>
-            </a>
-        </div>
+        <img src="images/kettle.gif" class="clickable" style="height:100px;position:absolute;top:170px;left:360px">
     </div>
-    <div class="resources" style="margin:0">
+    <div class="resources homeWing homeWingRight" style="margin:0">
         <div>
             <div id="resourcesTitle2"></div>
             <div style="margin:20px auto">
@@ -80,15 +81,6 @@
                     Use this MASSIVE tool developed by myekul.
                 </p>
             </div>
-            <!-- <div>
-                <a href="https://cupheadspeedruns.miraheze.org/" class="resourceButton" style="background-color: darkseagreen;">
-                    <img src="https://static.wikitide.net/metawiki/3/35/Miraheze_Logo.svg">
-                    <div>Cuphead Speedrunning<br>Wiki</div>
-                </a>
-                <p>
-                    A <span class="myekulColor">wiki</span> maintained by the community. Currently a work in progress!
-                </p>
-            </div> -->
         </div>
     </div>
 </div>

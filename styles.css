@@ -2,6 +2,11 @@
     --banner: salmon
 }
 
+@font-face {
+    font-family: "cuphead-vogue2";
+    src: url("cupheadvogue.ttf") format("truetype");
+}
+
 header {
     height: 80px
 }
@@ -10,9 +15,115 @@ header {
     max-width: 440px;
 }
 
+#home {
+    color: #3f3427 !important;
+    gap: 15px !important;
+    margin-top: 50px !important;
+}
+
+.homeCabinet {
+    position: relative;
+    box-sizing: border-box;
+    width: min(520px, calc(100vw - 40px));
+    padding: 34px;
+    isolation: isolate;
+    background-color: #D2B48C;
+    border: 8px solid #BDA27E;
+    border-radius:6px;
+}
+
+.homeCabinet::before {
+    position: absolute;
+    inset: 22px;
+    content: '';
+}
+
+.homeCabinet::after {
+    position: absolute;
+    inset: 16px;
+    content: '';
+    border: 8px solid #BDA27E;
+    box-shadow:
+        inset 6px 6px 0 #e0c39a,
+}
+
+.homeCabinet > * {
+    position: relative;
+    z-index: 1;
+}
+
+.homeWing {
+    position: relative;
+    box-sizing: border-box;
+    flex: 0 1 300px;
+    align-self: center;
+    height: 540px;
+    isolation: isolate;
+    padding: 22px 18px;
+    background: #A89171;
+}
+
+.homeWing::before {
+    position: absolute;
+    z-index: -1;
+    inset: 9px;
+    content: '';
+    background: #D2B48C;
+}
+
+.homeWingLeft {
+    clip-path: polygon(0 0, 100% 0, 100% 95%, 0 100%);
+}
+
+.homeWingRight {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 95%);
+}
+
+.homeWingLeft > div {
+    transform: perspective(700px) rotateY(5deg) skewY(-4deg) scaleX(.94);
+    transform-origin: right center;
+}
+
+.homeWingRight > div {
+    transform: perspective(700px) rotateY(-5deg) skewY(4deg) scaleX(.94);
+    transform-origin: left center;
+}
+
+.homeWing::before {
+    clip-path: inherit;
+}
+
+.cupboardShelf {
+    position: relative;
+    z-index: 2;
+    height: 18px;
+    margin: 28px -12px 16px;
+    background: #D2B48C;
+    border: 4px solid #BDA27E;
+    box-shadow: 0 9px 0 #D2B48C, 0 14px 12px rgb(0 0 0 / 28%);
+}
+
+@media (max-width: 900px) {
+    .homeWing {
+        flex-basis: min(300px, calc(100vw - 40px));
+        height: auto;
+        min-height: 540px;
+    }
+
+    .homeWingLeft,
+    .homeWingRight {
+        transform: none;
+    }
+
+    .homeWingLeft > div,
+    .homeWingRight > div {
+        transform: none;
+    }
+}
+
 #home a {
     background-color: var(--banner);
-    color: var(--bannerText);
+    color: #3f3427;
     font-family: var(--font2);
 }
 
@@ -146,4 +257,8 @@ header {
     gap: 6px;
     font-size: 85%;
     background-color: darkgray
+}
+
+.resources>div>div>p, .resourceText{
+    color:#3F3427 !important;
 }
