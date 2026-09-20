@@ -1,31 +1,8 @@
-function generateBossSelect() {
-    let HTMLContent = ''
-    HTMLContent += `<table id='bossTabs' class='container' style='margin-bottom:20px'><tr id='bossTabsRow'>`
-    let isle = 1
-    bossArray.forEach((boss, index) => {
-        if (boss.isle !== isle) {
-            HTMLContent += `<td style='padding:5px'></td>`
-            isle = boss.isle
-        }
-        HTMLContent += `<td id='${boss.id}Button' class='grow ${boss.id}' style='width:38px' onclick="globalBossIndex=${index};bossSelect('${boss.id}')">${getImage(boss, 38)}</td>`
-    })
-    HTMLContent += `</tr></table>`
-    document.getElementById('bossSelect').innerHTML = HTMLContent
-}
-function bossSelect(id) {
-    const className = 'selected'
-    document.querySelectorAll('#bossTabsRow td').forEach(button => {
-        button.classList.remove(className)
-    })
-    const button = document.getElementById(id + 'Button')
-    button?.classList.add(className)
-    updateBoardTitle()
-    playSound('category_select')
-    action()
-}
-function generateBossInfo() {
-    if (document.getElementById('bossSelect').children.length == 0) generateBossSelect()
-    setBossInfo()
+async function generateBossInfo() {
+    if (!oddities) {
+        const response = await fetch('oddities.json')
+        oddities = await response.json()
+    }
     const boss = bossArray[globalBossIndex]
     HTMLContent = ''
     if (boss) {
@@ -72,18 +49,28 @@ function parseOddities(boss) {
             HTMLContent += `
             <div class='container' style='gap:20px;margin-bottom:30px'>
                 <div class='font2' style='font-size:170%'>${index + 1}.</div>
-                ${part[0]}
-                <div style='width:500px'>${part[1]}</div>
+                ${phase(part.phase, part.img, part.extra)}
+                <div style='width:500px'>${part.title ? myekulColor(part.title) + ': ' : ''}${part.text}${additionalText(part.additionalText)}</div>
             </div>`
         })
         HTMLContent += `</div>`
         return HTMLContent
     }
+    function additionalText(value) {
+        if (!value) return ''
+        const helper = {
+            hitbox,
+            cards,
+            impractical,
+            dim: () => dim(value.text)
+        }[value.helper]
+        return helper ? helper() : ''
+    }
 }
 function bossPhaseHeader(boss, phaseID, phaseName) {
     return `
-    <div class='container ${boss.id}' style='gap:8px;padding:1px'>
-        <div class='container' style='width:38px;margin:0'>${getImage(boss, 38, phaseID)}</div>
+    <div class='container ${boss.id}' style='gap:8px;padding:1px;white-space:nowrap'>
+        <div class='container' style='width:36px;margin:0'>${getImage(boss, 36, phaseID)}</div>
         ${phaseName}
     </div>`
 }
@@ -149,7 +136,7 @@ function impractical() {
     return dim('This is impractical for a speedrun.')
 }
 function phase2KO(regular) {
-    return [phase('Phase 2', 2, [regular ? 'Regular' : '', 'charge', 'super3', 'whetstone']),
+    return [phase('Phase 2', 2, [regular ? 'Regular' : '', 'charge', 'superartiii', 'whetstone']),
     myekulColor('Phase 2 K.O.') + `: With Giant Ghost and Whetstone,
                 it's possible to end the fight in Phase 2, skipping the lengthy Phase 3 transition.`
     ]

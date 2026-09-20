@@ -139,5 +139,11 @@ header {
 }
 
 #tabs {
-    width: 300px !important
+    width: 400px !important
+}
+
+.headerButton {
+    gap: 6px;
+    font-size: 85%;
+    background-color: darkgray
 }

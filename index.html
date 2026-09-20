@@ -36,6 +36,10 @@
                     <button class="button toolButton rumorhoneybottoms" style="gap:4px" onclick="showTab('rumorTool')">
                         <img src="images/rumorTool/icon.png" style="height:22px">
                     </button>
+                    <div class="dot"></div>
+                    <button id='debugButton' onclick="altStratLevel=null;showTab('debug')" class="button headerButton" style="width:130px">
+                        <i class="fa fa-bug"></i>Debug Mod
+                    </button>
                 </div>
                 <div id="progress"></div>
                 <div id="tabsDiv"></div>
@@ -56,15 +60,17 @@
 </body>
 
 <script src="variables.js"></script>
-<script src="oddities.js"></script>
 <script src="hp.js"></script>
 
+<script src="tabs/tutorials.js"></script>
 <script src="tabs/bossInfo.js"></script>
 <script src="tabs/hp.js"></script>
 <script src="tabs/shotInfo.js"></script>
+
 <script src="tabs/monkeyTool.js"></script>
 <script src="tabs/graveyardTool.js"></script>
 <script src="tabs/rumorTool.js"></script>
+
 <script src="tabs/tabs.js"></script>
 
 <script src="main.js"></script>

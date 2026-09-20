@@ -83,7 +83,7 @@ function createGraveyard() {
 }
 function generateGraveyardTool() {
     document.getElementById('content').innerHTML = `
-    <div class='container'><div class='button font2 graveyardColor' style='font-size:100%;width:60px' onclick="openInfo()">INFO</div></div>
+    <div class='container'><div class='button graveyardColor infoButton' onclick="openInfo()">INFO</div></div>
     <div id="tableDiv" class="container" style="padding-top:20px"></div>
     <div id="buttons" class="container" style="gap:30px"></div>`
     setButtons()

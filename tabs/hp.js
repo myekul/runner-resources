@@ -1,8 +1,12 @@
 function generateHP() {
-    if (document.getElementById('bossSelect').children.length == 0) generateBossSelect()
     const boss = bossArray[globalBossIndex]
     let HTMLContent = ''
-    if (boss) HTMLContent += parseHP(boss)
+    if (boss) {
+        HTMLContent += parseHP(boss)
+    } else {
+        HTMLContent += `<div class='container'>Click a boss!</div>`
+        bossSelect()
+    }
     document.getElementById('content').innerHTML = HTMLContent
 }
 function parseHP(boss) {
