@@ -2,6 +2,5 @@
  - Baroness / King Dice HP
  - Expanded weapon damage
  - Phantom Expert HP is bugged
- - Soundboard
 
  - Mugshot download

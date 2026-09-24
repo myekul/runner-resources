@@ -3,7 +3,7 @@ initializeHash('home')
 setAudio('cuphead')
 document.addEventListener('DOMContentLoaded', () => {
     // Tutorials
-    setTabs(['home', null, 'bossInfo', 'hp', 'shotInfo', null, 'ballpit'])
+    setTabs(['home', null, 'bossInfo', 'hp', 'shotInfo', null, 'sfx', 'ballpit'])
         .then(() => {
             bossSelect('therootpack', true)
             showTab(globalTab)
@@ -46,6 +46,7 @@ async function action() {
         hp: generateHP,
         shotInfo: generateShotInfo,
         tutorials: generateTutorials,
+        sfx: generateSFX,
         monkeyTool: generateMonkeyTool,
         graveyardTool: generateGraveyardTool,
         rumorTool: generateRumorTool,
