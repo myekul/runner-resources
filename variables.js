@@ -2,8 +2,8 @@ const DIFFICULTIES = ['Simple', 'Regular', 'Expert']
 
 // let globalBossIndex = -1
 let globalBossIndex = 0
+let hp
 let globalShot
-let globalDifficulty = 1
 let oddities
 let debugInfo
 bosses.sort((a, b) => a.order - b.order)

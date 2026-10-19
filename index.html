@@ -45,8 +45,8 @@
                 <div id="tabsDiv"></div>
             </div>
             <div id="pageTitle"></div>
-            <div id="bossSelect"></div>
-            <div id='boardTitleDiv' class="sticky container" style="top:85px">
+            <div id="bossSelect" class="sticky" style="top:90px"></div>
+            <div id='boardTitleDiv' class="container">
                 <div id="boardTitle" class="container background1" style="max-width: 50%;margin:0"></div>
                 <button id='closeBoardTitle' class='grow' style='display:none;margin-left:10px' onclick="globalBossIndex=-1;updateBoardTitle();action();playSound('move')">
                     <i class="fa fa-close"></i>
@@ -60,7 +60,6 @@
 </body>
 
 <script src="variables.js"></script>
-<script src="hp.js"></script>
 
 <script src="tabs/tutorials.js"></script>
 <script src="tabs/bossInfo.js"></script>

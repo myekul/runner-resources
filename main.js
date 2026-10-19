@@ -3,7 +3,12 @@ initializeHash('home')
 setAudio('cuphead')
 document.addEventListener('DOMContentLoaded', () => {
     // Tutorials
-    setTabs(['home', null, 'bossInfo', 'hp', 'shotInfo', null, 'sfx', 'ballpit'])
+    fetch('data/hp.json')
+        .then(response => response.json())
+        .then(data => {
+            hp = data
+            return setTabs(['home', null, 'bossInfo', 'hp', 'shotInfo', null, 'sfx', 'ballpit'])
+        })
         .then(() => {
             bossSelect('therootpack', true)
             showTab(globalTab)
@@ -20,8 +25,8 @@ async function action() {
             tabCredit('SBDWolf', 'verified by', '98r5vwqx/image?v=7a51b38', 'color:#B8B8B8')
         }
     }
-    if (['bossInfo', 'hp'].includes(globalTab)) {
-        if (document.getElementById('bossSelect').children.length == 0) await generateBossSelect()
+    if (['bossInfo', 'hp', 'sfx'].includes(globalTab)) {
+        await generateBossSelect()
         show('bossSelect')
         show('boardTitleDiv')
     } else {
@@ -77,7 +82,7 @@ function openInfo() {
 }
 async function generateBossSelect() {
     if (!oddities) {
-        const response = await fetch('oddities.json')
+        const response = await fetch('data/oddities.json')
         oddities = await response.json()
     }
     let HTMLContent = `
@@ -101,9 +106,13 @@ async function generateBossSelect() {
             isle = boss.isle
         }
         bossArray2.push({ boss: boss, index: index })
-        const bossInfo = oddities[boss.id]
-        const infoCount = Object.values(bossInfo || {}).reduce((count, section) => count + (Array.isArray(section) ? section.length : 0), 0)
-        HTMLContent += `<td class='bossSelectNumber' style='font-size:80%;color:gray;position:relative;text-align:center'>${infoCount}</td>`
+        let num
+        if (globalTab == 'bossInfo') {
+            num = Object.values(oddities[boss.id] || {}).reduce((count, section) => count + (Array.isArray(section) ? section.length : 0), 0)
+        } else if (globalTab == 'sfx') {
+            num = sfx[index]?.length || '&nbsp;'
+        }
+        HTMLContent += `<td class='bossSelectNumber' style='font-size:80%;color:gray;position:relative;text-align:center'>${num}</td>`
     })
     HTMLContent += `</tr><tr>`
     bossArray2.forEach((boss2) => {

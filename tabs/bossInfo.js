@@ -1,17 +1,22 @@
-async function generateBossInfo() {
-    if (!oddities) {
-        const response = await fetch('oddities.json')
-        oddities = await response.json()
-    }
-    const boss = bossArray[globalBossIndex]
+function generateBossInfo() {
     HTMLContent = ''
-    if (boss) {
-        HTMLContent = `
-        <div class='container' style='align-items:flex-start'>
-            ${parseOddities(boss)}
-        </div>`
+    if (globalBossIndex == -1) {
+        bossArray.forEach(boss => {
+            HTMLContent += `
+            <div class='container'>
+                ${parseOddities(boss)}
+            </div>`
+        })
     } else {
-        HTMLContent += `<div class='container'>Click a boss!</div>`
+        const boss = bossArray[globalBossIndex]
+        if (boss) {
+            HTMLContent = `
+            <div class='container'>
+                ${parseOddities(boss)}
+            </div>`
+        } else {
+            HTMLContent += `<div class='container'>Click a boss!</div>`
+        }
     }
     document.getElementById('content').innerHTML = HTMLContent
 }
@@ -49,7 +54,7 @@ function parseOddities(boss) {
             HTMLContent += `
             <div class='container' style='gap:20px;margin-bottom:30px'>
                 <div class='font2' style='font-size:170%'>${index + 1}.</div>
-                ${phase(part.phase, part.img, part.extra)}
+                ${phase(part.phase, part.img, part.extra, boss)}
                 <div style='width:500px'>${part.title ? myekulColor(part.title) + ': ' : ''}${part.text}${additionalText(part.additionalText)}</div>
             </div>`
         })
@@ -74,8 +79,7 @@ function bossPhaseHeader(boss, phaseID, phaseName) {
         ${phaseName}
     </div>`
 }
-function phase(phaseText, phase, extra) {
-    const boss = bossArray[globalBossIndex]
+function phase(phaseText, phase, extra, boss = bossArray[globalBossIndex]) {
     const versionSet = {
         '1.0': { className: 'legacy' },
         '1.1': { className: 'onePointOne' },
